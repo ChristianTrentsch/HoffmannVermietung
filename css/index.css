@@ -127,6 +127,18 @@ footer a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.carousel-item img {
+  max-height: 500px;
+  width: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
 /* Optional: Scrollverhalten glätten */
 html {
   scroll-behavior: smooth;
