@@ -1,138 +1,152 @@
-/* Basis-Layout: Body nimmt gesamte Höhe ein, Footer bleibt unten */
+/* =============================
+   Layout-Basis
+============================= */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 3rem; /* Platz für fixed navbar */
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  padding-top: 3rem;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: "Segoe UI", "Inter", Roboto, sans-serif;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
 }
 
-/* Hauptbereich soll wachsen */
 main {
   flex: 1;
 }
 
-/* -------------------------
-   Navigation - Professional Look
--------------------------- */
+/* =============================
+   Farbdesign (Light & Dark)
+============================= */
 
+:root[data-bs-theme="light"] {
+  --bs-body-bg: #f4f4f4;
+  --bs-body-color: #222222;
+  --bs-border-color: #dcdcdc;
+  --bs-secondary-color: #937c5d; /* Akzent */
+  --bs-primary: #a88c6f; /* Alternativer Ton */
+}
+
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #1b1b1f;
+  --bs-body-color: #f1f1f1;
+  --bs-border-color: #2a2a2a;
+  --bs-secondary-color: #cbb893; /* Akzent im Dark Mode */
+  --bs-primary: #a88c6f;
+}
+
+/* =============================
+   Navigation
+============================= */
 .custom-navbar {
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bs-border-color);
-  z-index: 1030;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand {
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  /* letter-spacing: 1px; */
+  text-transform: uppercase;
+  color: var(--bs-secondary-color);
 }
 
-/* Menülinks stilvoller */
 .navbar-nav .nav-link {
   position: relative;
   font-weight: 500;
   color: var(--bs-body-color);
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  /* color: var(--bs-primary); */
-  color: var(--bs-secondary-color);
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
-  bottom: -3px;
   left: 0;
-  width: 0%;
+  bottom: 0;
   height: 2px;
-  background-color: currentColor;
-  transition: width 0.3s ease-in-out;
+  width: 0%;
+  background-color: var(--bs-secondary-color);
+  transition: width 0.4s ease;
 }
 
 .navbar-nav .nav-link:hover::after {
   width: 100%;
 }
 
-/* Aktiver Link */
 .navbar-nav .nav-link.active {
-  font-weight: 600;
-  /* color: var(--bs-primary); */
   color: var(--bs-secondary-color);
+  font-weight: 600;
 }
 
-/* Theme Toggle Button */
+/* Theme-Toggle Button */
 #themeToggle {
   font-size: 0.875rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  border: none;
+  background-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+  border-radius: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* -------------------------
-   Header (Hero-Stil)
--------------------------- */
+#themeToggle:hover {
+  background-color: var(--bs-secondary-color);
+  color: #fff;
+}
 
+/* =============================
+   Hero-Header
+============================= */
 header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(
+    to right,
+    var(--bs-secondary-color),
+    var(--bs-primary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 header p.lead {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--bs-secondary-color);
+  max-width: 640px;
 }
 
-/* -------------------------
-   Footer - Sticky unten
--------------------------- */
-
-footer {
-  background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
-  padding: 2rem 0;
-  border-top: 1px solid var(--bs-border-color);
-  margin-top: 4rem;
-  text-align: center;
-}
-
-footer a {
-  color: var(--bs-body-color);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-footer a:hover {
-  /* color: var(--bs-primary); */
-  color: var(--bs-secondary-color);
-}
-
-/* -------------------------
-   Sonstige Layout-Elemente
--------------------------- */
-
-/* Carousel responsive + Abstand */
+/* =============================
+   Carousel
+============================= */
 .carousel {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .carousel-item img {
-  max-height: 650px;
-  width: auto;
-  margin: 0 auto;
+  max-height: 300px;
+  width: 100%;
+  border-radius: 0.75rem;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
@@ -141,7 +155,35 @@ footer a:hover {
   }
 }
 
-/* Optional: Scrollverhalten glätten */
-html {
-  scroll-behavior: smooth;
+/* =============================
+   Footer
+============================= */
+footer {
+  background-color: var(--bs-body-bg);
+  border-top: 1px solid var(--bs-border-color);
+  color: var(--bs-body-color);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: var(--bs-secondary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--bs-primary);
+}
+
+/* =============================
+   Zusatz-Effekte
+============================= */
+a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 15px var(--bs-secondary-color);
 }

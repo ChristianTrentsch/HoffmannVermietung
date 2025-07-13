@@ -2,15 +2,15 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galerie – Hoffmann Vermietung</title>
     <meta name="description"
-        content="Bildergalerie der Ferienwohnungen und Mietwohnungen von Hoffmann Vermietung in Musterstadt.">
+        content="Bildergalerie der stilvollen Ferien- und Mietwohnungen von Hoffmann Vermietung in Musterstadt." />
+    <meta property="og:title" content="Galerie – Hoffmann Vermietung" />
+    <meta property="og:description" content="Entdecken Sie moderne, charmante Wohnräume in unserer Galerie." />
 
-    <!-- Favicon (wird im Tab angezeigt) -->
-    <link rel="icon" href="images/blau_default.png" type="image/x-icon">
-
+    <link rel="icon" href="images/blau_default.png" type="image/x-icon" />
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme') || 'light';
@@ -18,98 +18,96 @@
         })();
     </script>
 
-    <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
 </head>
 
 <body>
-
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-body shadow-sm rounded-bottom custom-navbar fixed-top">
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Hoffmann Vermietung</a>
+            <a class="navbar-brand" href="index.html">Hoffmann Vermietung</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Startseite</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="galerie.html" aria-current="page">Galerie</a></li>
                     <li class="nav-item"><a class="nav-link" href="preise.html">Preise</a></li>
                     <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
                 </ul>
-                <div class="d-flex">
-                    <button id="themeToggle" class="btn btn-outline-secondary btn-sm">🌙 Dark Mode</button>
-                </div>
+                <button id="themeToggle" class="btn btn-outline-secondary btn-sm">🌓 Wechseln</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hauptinhalt für Screenreader und SEO-Crawler klar kennzeichnen -->
-    <main>
+    <!-- Inhalt -->
+    <main class="container py-5 mt-5">
+        <section class="mb-5">
+            <h1 class="text-center mb-4">Galerie</h1>
+            <p class="text-center text-muted">Entdecken Sie Eindrücke unserer stilvollen Wohnobjekte – vom ländlichen
+                Idyll bis zur modernen Stadtwohnung.</p>
+        </section>
 
-        <!-- Galerie -->
-        <div class="container py-5">
-            <h1 class="mb-4">Galerie</h1>
+        <!-- Landhaus -->
+        <section class="mb-5">
+            <h2 class="mb-4">Landhaus</h2>
             <div class="row g-4">
-                <h2>Landhaus</h2>
                 <div class="col-md-4">
-                    <img src="images/landhaus/landhaus.jpg" class="img-fluid rounded" alt="Landhaus">
-                    <p>Landhaus</p>
+                    <img src="images/landhaus/landhaus.jpg" class="img-fluid rounded shadow-sm"
+                        alt="Landhaus Außenansicht" />
+                    <p class="mt-2">Vorderansicht des liebevoll renovierten Landhauses mit ruhiger Lage im Grünen.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/landhaus/landhaus_fern.jpg" class="img-fluid rounded" alt="Landhaus Ausblick">
-                    <p>Landhaus Ausblick</p>
+                    <img src="images/landhaus/landhaus_fern.jpg" class="img-fluid rounded shadow-sm"
+                        alt="Weitblick vom Landhaus" />
+                    <p class="mt-2">Der Blick aus dem Fenster: weite Felder, sanfte Hügel und absolute Ruhe.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/landhaus/landhaus_nah.jpg" class="img-fluid rounded" alt="Landhaus Eingang">
-                    <p>Landhaus Eingang</p>
+                    <img src="images/landhaus/landhaus_nah.jpg" class="img-fluid rounded shadow-sm"
+                        alt="Landhaus Eingang" />
+                    <p class="mt-2">Der liebevoll gestaltete Eingang empfängt Sie mit Charme und Gemütlichkeit.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="container py-5">
+        <!-- Stadtwohnung -->
+        <section class="mb-5">
+            <h2 class="mb-4">Stadtwohnung</h2>
             <div class="row g-4">
-                <h2>Stadtwohnung</h2>
                 <div class="col-md-4">
-                    <img src="images/stadtwohnung/living_room.jpg" class="img-fluid rounded"
-                        alt="Mietwohnung Wohnzimmer">
-                    <p>Mietwohnung Wohnzimmer</p>
+                    <img src="images/stadtwohnung/living_room.jpg" class="img-fluid rounded shadow-sm"
+                        alt="Wohnzimmer Stadtwohnung" />
+                    <p class="mt-2">Das helle Wohnzimmer mit moderner Einrichtung lädt zum Verweilen ein.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/stadtwohnung/living_kitchen.jpg" class="img-fluid rounded" alt="Mietwohnung Küche">
-                    <p>Mietwohnung Küche</p>
+                    <img src="images/stadtwohnung/living_kitchen.jpg" class="img-fluid rounded shadow-sm"
+                        alt="Küche Stadtwohnung" />
+                    <p class="mt-2">Offene Wohnküche mit hochwertigen Geräten – ideal für entspanntes Kochen.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/stadtwohnung/living_nah.jpg" class="img-fluid rounded"
-                        alt="Mietwohnung Schlafzimmer">
-                    <p>Mietwohnung Schlafzimmer</p>
+                    <img src="images/stadtwohnung/living_nah.jpg" class="img-fluid rounded shadow-sm"
+                        alt="Schlafzimmer Stadtwohnung" />
+                    <p class="mt-2">Stilvolles Schlafzimmer mit ruhiger Atmosphäre und komfortabler Ausstattung.</p>
                 </div>
             </div>
-        </div>
-
+        </section>
     </main>
 
-    <!-- Footer mit internen Links und Social Media -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2025 Hoffmann Vermietung – Alle Rechte vorbehalten</p>
-            <nav aria-label="Footer-Navigation">
-                <p>
-                    <a href="impressum.html">Impressum</a> |
-                    <a href="datenschutz.html">Datenschutzerklärung</a> |
-                    <a href="kontakt.html">Kontakt</a>
-                </p>
-            </nav>
-            <!-- <div>
-                <a href="#" aria-label="Facebook">Facebook</a> |
-                <a href="#" aria-label="Instagram">Instagram</a>
-            </div> -->
+    <!-- Footer -->
+    <footer class="bg-body border-top py-4 text-center">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Hoffmann Vermietung</p>
+            <p>
+                <a href="impressum.html">Impressum</a> |
+                <a href="datenschutz.html">Datenschutz</a> |
+                <a href="kontakt.html">Kontakt</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Bootstrap + Dark Mode Script -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/theme.js"></script>
 </body>
