@@ -128,14 +128,14 @@ footer a:hover {
 }
 
 .carousel-item img {
-  max-height: 500px;
+  max-height: 650px;
   width: auto;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .carousel-item img {
-    height: 300px;
+    height: 220px;
   }
 }
 
